@@ -19,16 +19,6 @@ app.get('/dht11', function(req, res) {
     res.json(data);
 })
 
-app.get('/test', function(req, res) {
-    var data;
-
-    while (!data) {
-        data = dht11.getSampleData();
-    };
-
-    res.json(data);
-})
-
 app.listen(8081, function() {
     console.log('Listening on 8081');
 })

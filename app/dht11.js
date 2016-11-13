@@ -12,10 +12,3 @@ exports.getActualData = function() {
         return 'Invalid data'
     }
 }
-
-exports.sampleData = function() {
-    return {
-        'temperature': 22,
-        'humidity': 25
-    }
-}
