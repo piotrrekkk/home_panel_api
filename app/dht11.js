@@ -1,11 +1,15 @@
 var dht = require('dht-sensor');
 
-exports.getData = function() {
+exports.getActualData = function() {
     var current = dht.read(11, 4);
 
-    return {
-        'temperature': current.temperature,
-        'humidity': current.humidity
+    if (current.temperature !== 0) {
+        return {
+            'temperature': current.temperature,
+            'humidity': current.humidity
+        }
+    } else {
+        return 'Invalid data'
     }
 }
 

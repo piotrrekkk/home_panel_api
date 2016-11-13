@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/dht11', function(req, res) {
-    res.json(dht11.getData());
+    res.json(dht11.getActualData());
 })
 
 app.get('/test', function(req, res) {
