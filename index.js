@@ -10,5 +10,5 @@ app.get('/dht11', function(req, res) {
 }
 
 app.listen(8081, function() {
-  console.lolg('Listening on 8081');
+  console.log('Listening on 8081');
 });
