@@ -9,6 +9,10 @@ app.get('/dht11', function(req, res) {
     res.json(dht11.data);
 })
 
+app.get('/test', function(req, res) {
+    res.json(dht11.sampleData);
+})
+
 app.listen(8081, function() {
     console.log('Listening on 8081');
 })
