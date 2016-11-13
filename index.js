@@ -1,9 +1,12 @@
 var express = require('express');
+var bodyParser = require('body-parser');
+
 var dht11 = require('./app/dht11');
 
 var app = express();
 
 app.use(express.static('public'));
+app.use(bodyParser.json()); // for parsing application/json
 
 app.get('/dht11', function(req, res) {
     res.json(dht11.data);
