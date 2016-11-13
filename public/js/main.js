@@ -1,6 +1,6 @@
 (function() {
     $.get('/dht11', function(res) {
-        console.log(res);
-        // $('#temp').res
+        $('#temp').html(res.temperature);
+        $('#hum').html(res.humidity);
     })
 })()
