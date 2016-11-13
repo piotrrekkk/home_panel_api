@@ -14,7 +14,7 @@ app.get('/dht11', function(req, res) {
 
     do {
         data = dht11.getActualData();
-    } while (data.temperature > 0);
+    } while (data.temperature);
 
     res.json(data);
 })
