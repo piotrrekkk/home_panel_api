@@ -9,9 +9,9 @@ exports.getActualData = function() {
     }
 }
 
-exports.sampleData = function() {
+exports.getSampleData = function() {
     return {
-        'temperature': '22',
-        'humidity': '25'
+        'temperature': 22,
+        'humidity': 25
     }
 }

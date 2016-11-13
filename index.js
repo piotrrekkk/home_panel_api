@@ -20,7 +20,13 @@ app.get('/dht11', function(req, res) {
 })
 
 app.get('/test', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });
+    var data;
+
+    do {
+        data = dht11.getSampleData();
+    } while (data.temperature);
+
+    res.json(data);
 })
 
 app.listen(8081, function() {
