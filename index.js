@@ -9,16 +9,14 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var router = app.Router();
-
-router.get('/dht11', function(req, res) {
+app.get('/dht11', function(req, res) {
     res.json(dht11.data);
 })
 
-router.get('/test', function(req, res) {
-    res.json(dht11.sampleData);
+app.get('/test', function(req, res) {
+    res.json({ message: 'hooray! welcome to our api!' });   
 })
 
-router.listen(8081, function() {
+app.listen(8081, function() {
     console.log('Listening on 8081');
 })
