@@ -9,16 +9,13 @@ exports.getActualData = function() {
             'humidity': current.humidity
         }
     } else {
-        return {
-            'temperature': 0,
-            'humidity': 0
-        }
+        return 'Invalid data'
     }
 }
 
 exports.sampleData = function() {
     return {
-        'temperature': '22',
-        'humidity': '25'
+        'temperature': 22,
+        'humidity': 25
     }
 }

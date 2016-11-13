@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/dht11', function(req, res) {
     var data;
 
-    while (!data.temperature) {
+    while (!data) {
         data = dht11.getActualData();
     };
 
@@ -22,7 +22,7 @@ app.get('/dht11', function(req, res) {
 app.get('/test', function(req, res) {
     var data;
 
-    while (!data.temperature) {
+    while (!data) {
         data = dht11.getSampleData();
     };
 
