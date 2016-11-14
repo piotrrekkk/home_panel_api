@@ -9,6 +9,6 @@ exports.getActualData = function() {
             'humidity': current.humidity
         }
     } else {
-        return 'Invalid data'
+        return;
     }
 }
