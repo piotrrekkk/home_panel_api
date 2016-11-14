@@ -23,6 +23,9 @@ exports.addHistoricalData = function() {
         'time': now.getHours() + ':' + now.getMinutes()
     }
 
+    console.log('temperature', getValue().temperature, getValue().temperature == '0');
+    console.log('humidity', getValue().humidity, getValue().humidity == '0');
+
     if (getValue().temperature == '0' || getValue().humidity == '0') {
         return;
     }
