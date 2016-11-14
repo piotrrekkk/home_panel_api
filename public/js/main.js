@@ -12,15 +12,16 @@
     function createHumidityChart(data) {
         var humidity_data = _.pluck(data, 'humidity');
         var time = _.pluck(data, 'time');
-        console.log('humidity_data', humidity_data);
+        console.log(time, humidity_data);
         var humidity_chart_container = document.getElementById("humidity_chart");
 
         var humidity_chart = Chart.Line(humidity_chart_container, {
             data: {
                 labels: time,
-                datasets: {
+                datasets: [{
+                    label: "Wilgotność",
                     data: humidity_data
-                }
+                }]
             }
         });
     }
