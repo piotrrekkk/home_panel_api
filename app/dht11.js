@@ -19,12 +19,12 @@ exports.getActualData = function() {
 
 exports.addHistoricalData = function() {
     var value = getValue();
-    historyValues.push(value);
+    historicalValues.push(value);
     filterOldValues();
 }
 
 exports.getHistoricalData = function() {
-    return historyValues;
+    return historicalValues;
 }
 
 getValue = function() {
