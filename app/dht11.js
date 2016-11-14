@@ -21,7 +21,7 @@ exports.addHistoricalData = function() {
     var value = getValue();
     historicalValues.push(value);
     console.log('saving historical data', value);
-    // filterOldValues();
+    filterOldValues();
 }
 
 exports.getHistoricalData = function() {
