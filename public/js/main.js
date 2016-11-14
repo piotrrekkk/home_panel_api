@@ -18,7 +18,9 @@
         var humidity_chart = Chart.Line(humidity_chart_container, {
             data: {
                 labels: time,
-                datasets: [humidity_data]
+                datasets: {
+                    data: humidity_data
+                }
             }
         });
     }
