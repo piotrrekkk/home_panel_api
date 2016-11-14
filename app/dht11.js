@@ -22,8 +22,10 @@ exports.addHistoricalData = function() {
         'humidity': getValue().humidity,
         'time': now.getHours() + ':' + now.getMinutes()
     }
-    historicalValues.push(value);
-    filterOldValues();
+    if (getValue().temperature && getValue().humidity) {
+        historicalValues.push(value);
+        filterOldValues();
+    }
 }
 
 exports.getHistoricalData = function() {
