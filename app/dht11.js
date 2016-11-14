@@ -6,11 +6,11 @@ exports.getActualData = function() {
     var sensor = getValue()
     var data;
     data = {
-        current: {
+        'current': {
             'temperature': sensor.temperature,
             'humidity': sensor.humidity
         },
-        historical: {
+        'historical': {
             historicalValues
         }
     }
