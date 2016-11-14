@@ -39,7 +39,7 @@ function getValue() {
 
 function filterValues() {
     historicalValues = _.filter(historicalValues, function(item) {
-        return item.temperature !== 0 || item.humidity !== 0;
+        return item.temperature !== 0 && item.humidity !== 0;
     })
 
     historicalValues = historicalValues.splice(historicalValues.length - 100);
