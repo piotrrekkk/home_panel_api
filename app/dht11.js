@@ -27,10 +27,10 @@ exports.getHistoricalData = function() {
     return historicalValues;
 }
 
-getValue = function() {
+function getValue() {
     dht.read(11, 4);
 }
 
-filterOldValues = function() {
+function filterOldValues() {
     historicalValues.splice(historicalValues.length - 100);
 }
