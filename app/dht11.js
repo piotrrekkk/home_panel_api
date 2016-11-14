@@ -16,9 +16,13 @@ exports.getActualData = function() {
 }
 
 exports.addHistoricalData = function() {
-    var value = getValue();
+    var now = new Date();
+    var value = {
+        'temperature': getValue().temperature,
+        'humidity': getValue().humidity,
+        'time': now.getHours() + ':' + now.getMinutes()
+    }
     historicalValues.push(value);
-    console.log('saving historical data', value);
     filterOldValues();
 }
 
