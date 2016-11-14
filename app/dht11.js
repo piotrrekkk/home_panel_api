@@ -10,9 +10,9 @@ exports.getActualData = function() {
             'temperature': sensor.temperature,
             'humidity': sensor.humidity
         },
-        'historical': {
+        'historical': [
             historicalValues
-        }
+        ]
     }
     return data;
 }
