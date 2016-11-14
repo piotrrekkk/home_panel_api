@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/dht11', function(req, res) {
     var data;
-    while (!data.current.temperature) {
+    while (!data || !data.current || !data.current.temperature) {
         data = dht11.getActualData();
     };
 
