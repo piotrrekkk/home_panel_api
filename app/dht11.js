@@ -20,6 +20,7 @@ exports.getActualData = function() {
 exports.addHistoricalData = function() {
     var value = getValue();
     historicalValues.push(value);
+    console.log('saving historical data', value);
     // filterOldValues();
 }
 
@@ -32,5 +33,5 @@ function getValue() {
 }
 
 function filterOldValues() {
-    historicalValues.splice(historicalValues.length - 100);
+    historicalValues = historicalValues.splice(historicalValues.length - 100);
 }
