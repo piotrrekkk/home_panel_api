@@ -18,12 +18,8 @@
         var humidity_chart = Chart.Line(humidity_chart_container, {
             data: {
                 labels: time,
-                backgroundColor: [
-                    'rgba(54, 162, 235, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                ],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
                 datasets: [{
                     label: "Wilgotność [%]",
                     data: humidity_data
@@ -33,7 +29,7 @@
     }
 
     // temperature chart
-    function createtemperatureChart(data) {
+    function createTemperatureChart(data) {
         var temperature_data = _.pluck(data, 'temperature');
         var time = _.pluck(data, 'time');
         var temperature_chart_container = document.getElementById("temperature_chart");
@@ -41,12 +37,8 @@
         var temperature_chart = Chart.Line(temperature_chart_container, {
             data: {
                 labels: time,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)'
-                ],
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255,99,132,1)',
                 datasets: [{
                     label: "Temperature [st.C]",
                     data: temperature_data
