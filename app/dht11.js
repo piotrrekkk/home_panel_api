@@ -20,7 +20,7 @@ exports.getActualData = function() {
 exports.addHistoricalData = function() {
     var value = getValue();
     historicalValues.push(value);
-    filterOldValues();
+    // filterOldValues();
 }
 
 exports.getHistoricalData = function() {
