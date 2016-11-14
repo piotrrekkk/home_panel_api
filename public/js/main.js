@@ -9,12 +9,11 @@
 
 
     // humidity chart
-    function createHumidityChart() {
-        var humidity_data = [];
+    function createHumidityChart(data) {
+        var humidity_data = _.pluck(data, 'humidity')
         var humidity_chart_container = document.getElementById("humidity_chart");
         var humidity_chart = Chart.Line(ctx, {
-            data: data,
-            options: options
+            data: humidity_data
         });
     }
 })()
