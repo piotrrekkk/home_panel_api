@@ -1,4 +1,5 @@
 var dht = require('dht-sensor');
+var _ = require('underscore');
 
 var historicalValues = [];
 
@@ -16,10 +17,6 @@ exports.getActualData = function() {
 }
 
 exports.addHistoricalData = function() {
-    if (!getValue() || parseInt(getValue().temperature) === 0 || parseInt(getValue().humidity) === 0) {
-        return;
-    }
-
     var now = new Date();
 
     var value = {
@@ -29,7 +26,7 @@ exports.addHistoricalData = function() {
     }
 
     historicalValues.push(value);
-    filterOldValues();
+    filterValues();
 }
 
 exports.getHistoricalData = function() {
@@ -40,6 +37,10 @@ function getValue() {
     return dht.read(11, 4);
 }
 
-function filterOldValues() {
+function filterValues() {
+    historicalValues = _.filter(historicalValues, function(item) {
+        return item.temperature !== 0 || item.humidity !== 0;
+    })
+        
     historicalValues = historicalValues.splice(historicalValues.length - 100);
 }
