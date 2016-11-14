@@ -3,7 +3,7 @@ var dht = require('dht-sensor');
 var historicalValues = [];
 
 exports.getActualData = function() {
-    var sensor = dht.read(11, 4);
+    var sensor = getValue();
     var data;
     data = {
         'current': {
