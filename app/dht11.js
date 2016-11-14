@@ -16,10 +16,10 @@ exports.getActualData = function() {
 }
 
 exports.addHistoricalData = function() {
-    console.log('temperature', getValue().temperature, !getValue().temperature);
-    console.log('humidity', getValue().humidity, !getValue().humidity);
+    console.log('temperature', getValue().temperature, parseInt(getValue().temperature) === 0);
+    console.log('humidity', getValue().humidity, parseInt(getValue().humidity) === 0);
 
-    if (!getValue() || !getValue().temperature || !getValue().humidity) {
+    if (!getValue() || parseInt(getValue().temperature) === 0 || parseInt(getValue().humidity) === 0) {
         return;
     }
 
