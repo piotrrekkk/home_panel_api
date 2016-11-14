@@ -32,5 +32,5 @@ getValue = function() {
 }
 
 filterOldValues = function() {
-    historicalValues.splice(a.length - 100);
+    historicalValues.splice(historicalValues.length - 100);
 }
