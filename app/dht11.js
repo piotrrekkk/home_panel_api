@@ -28,7 +28,7 @@ exports.getHistoricalData = function() {
 }
 
 function getValue() {
-    dht.read(11, 4);
+    return dht.read(11, 4);
 }
 
 function filterOldValues() {
