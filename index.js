@@ -18,7 +18,7 @@ app.get('/dht11', function(req, res) {
     res.json(data);
 })
 
-setInterval(dht11.addHistoricalData, 1000);
+setInterval(dht11.addHistoricalData, 600000);
 
 app.listen(8081, function() {
     console.log('Listening on 8081');
