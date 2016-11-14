@@ -12,7 +12,7 @@
     function createHumidityChart(data) {
         var humidity_data = _.pluck(data, 'humidity')
         var humidity_chart_container = document.getElementById("humidity_chart");
-        var humidity_chart = Chart.Line(ctx, {
+        var humidity_chart = Chart.Line(humidity_chart_container, {
             data: humidity_data
         });
     }
