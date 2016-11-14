@@ -23,7 +23,7 @@ exports.addHistoricalData = function() {
         'time': now.getHours() + ':' + now.getMinutes()
     }
     console.log(getValue().temperature, getValue().humidity);
-    if (getValue().temperature !== 0 && getValue().humidity !== 0) {
+    if (getValue().temperature != 0 && getValue().humidity != 0) {
         console.log('not zero values', getValue().temperature, getValue().humidity);
         historicalValues.push(value);
         filterOldValues();
