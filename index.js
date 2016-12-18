@@ -1,24 +1,26 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-var dht11 = require('./app/dht11');
+var temp = require('./app/temperature');
 
 var app = express();
 
-app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/dht11', function(req, res) {
-    var data;
-    while (!data || !data.current || !data.current.temperature) {
-        data = dht11.getActualData();
-    };
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
-    res.json(data);
+
+app.get('/dht11', function(req, res) {
+	var data =  temp.getData();
+    	res.json(data);
 })
 
-setInterval(dht11.addHistoricalData, 10000);
+setInterval(temp.refreshValues, 1000);
 
 app.listen(8081, function() {
     console.log('Listening on 8081');
