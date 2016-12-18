@@ -22,6 +22,6 @@ app.get('/dht11', function(req, res) {
 
 setInterval(temp.refreshValues, 1000);
 
-app.listen(8081, function() {
+app.listen(3000, function() {
     console.log('Listening on 8081');
 })
